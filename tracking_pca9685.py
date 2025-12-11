@@ -29,7 +29,7 @@ from send_email import send_email_with_latest_image
 
 # ============ 設定參數 ============
 # 顯示模式：True = 無視窗 (高效能), False = 有視窗 (方便調試)
-HEADLESS = False
+HEADLESS = True
 
 # 警報閾值
 ENTER_THRESHOLD = 5   # 連續幾幀有人才觸發警報
