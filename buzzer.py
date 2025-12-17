@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 
-# BCM
+# BCM pin number for the buzzer
 BUZZER_PIN = 24
 
 def init_buzzer():

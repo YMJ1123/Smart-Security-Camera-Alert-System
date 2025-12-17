@@ -13,7 +13,6 @@ def init_log():
             writer = csv.writer(f)
             writer.writerow(["timestamp", "event", "image", "detail"])
 
-
 def log_event(event: str, image_path: str = "", detail: str = ""):
     ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     img_name = os.path.basename(image_path) if image_path else ""

@@ -2,3 +2,4 @@ invade_image/
 yolo11n.pt
 __pycache__/
 log/
+.DS_Store
