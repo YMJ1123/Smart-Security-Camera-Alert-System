@@ -9,9 +9,9 @@ from email import encoders
 
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
-SENDER_EMAIL = "embedding666@gmail.com"
-SENDER_PASSWORD = "ztke igvs svwq flhn"
-RECEIVER_EMAIL = "embedding666@gmail.com"
+SENDER_EMAIL = "YOUR_SENDER_EMAIL" #please use your actual sender email here
+SENDER_PASSWORD = "YOUR_APP_PASSWORD" # Use Google App Password
+RECEIVER_EMAIL = "YOUR_RECEIVER_EMAIL" #please use your actual receiver email
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 IMAGE_DIR = os.path.join(BASE_DIR, "invade_image")
@@ -33,7 +33,7 @@ def send_email_with_latest_image():
     )
     msg.attach(MIMEText(body, "plain"))
 
-    # 找 invade_image 下的 PNG
+    # Find PNG files in the invade_image directory
     png_pattern = os.path.join(IMAGE_DIR, "*.png")
     png_files = glob.glob(png_pattern)
 
@@ -41,7 +41,7 @@ def send_email_with_latest_image():
         print("No PNG images found.")
         return
 
-    # 最新的檔案
+    # Get the latest file
     latest_png = sorted(png_files)[-1]
     print("Latest image:", latest_png)
 
@@ -50,8 +50,6 @@ def send_email_with_latest_image():
         part.set_payload(attachment.read())
 
     encoders.encode_base64(part)
-
-    # 用檔名，而不是完整路徑
     filename_only = os.path.basename(latest_png)
     part.add_header("Content-Disposition", f"attachment; filename={filename_only}")
 
