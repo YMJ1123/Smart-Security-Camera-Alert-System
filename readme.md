@@ -59,9 +59,6 @@ wget https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n.pt
 
 Or manually download and place in project root directory.  
 
-Model Download Link:  
-https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n.pt
-
 
 ## Configuration
 ### Email Notification
